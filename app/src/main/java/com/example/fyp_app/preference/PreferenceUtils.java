@@ -25,12 +25,12 @@ import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.annotation.StringRes;
 import androidx.camera.core.CameraSelector;
+
+import com.example.fyp_app.CameraSource;
+import com.example.fyp_app.R;
 import com.google.android.gms.common.images.Size;
 import com.google.common.base.Preconditions;
 import com.google.mlkit.common.model.LocalModel;
-import com.google.mlkit.vision.demo.CameraSource;
-import com.google.mlkit.vision.demo.CameraSource.SizePair;
-import com.google.mlkit.vision.demo.R;
 import com.google.mlkit.vision.face.FaceDetectorOptions;
 import com.google.mlkit.vision.objects.ObjectDetectorOptionsBase.DetectorMode;
 import com.google.mlkit.vision.objects.custom.CustomObjectDetectorOptions;
@@ -59,7 +59,7 @@ public class PreferenceUtils {
   }
 
   @Nullable
-  public static SizePair getCameraPreviewSizePair(Context context, int cameraId) {
+  public static CameraSource.SizePair getCameraPreviewSizePair(Context context, int cameraId) {
     Preconditions.checkArgument(
         cameraId == CameraSource.CAMERA_FACING_BACK
             || cameraId == CameraSource.CAMERA_FACING_FRONT);
@@ -75,7 +75,7 @@ public class PreferenceUtils {
 
     try {
       SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
-      return new SizePair(
+      return new CameraSource.SizePair(
           Size.parseSize(sharedPreferences.getString(previewSizePrefKey, null)),
           Size.parseSize(sharedPreferences.getString(pictureSizePrefKey, null)));
     } catch (Exception e) {

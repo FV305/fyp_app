@@ -16,11 +16,11 @@
 
 package com.example.fyp_app.posedetector.classification;
 
-import static com.google.mlkit.vision.demo.java.posedetector.classification.Utils.average;
-import static com.google.mlkit.vision.demo.java.posedetector.classification.Utils.l2Norm2D;
-import static com.google.mlkit.vision.demo.java.posedetector.classification.Utils.multiplyAll;
-import static com.google.mlkit.vision.demo.java.posedetector.classification.Utils.subtract;
-import static com.google.mlkit.vision.demo.java.posedetector.classification.Utils.subtractAll;
+import static com.example.fyp_app.posedetector.classification.Utils.average;
+import static com.example.fyp_app.posedetector.classification.Utils.l2Norm2D;
+import static com.example.fyp_app.posedetector.classification.Utils.multiplyAll;
+import static com.example.fyp_app.posedetector.classification.Utils.subtract;
+import static com.example.fyp_app.posedetector.classification.Utils.subtractAll;
 
 import com.google.mlkit.vision.common.PointF3D;
 import com.google.mlkit.vision.pose.PoseLandmark;

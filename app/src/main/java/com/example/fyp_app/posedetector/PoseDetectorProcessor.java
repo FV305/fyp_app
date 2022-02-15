@@ -26,9 +26,9 @@ import com.example.fyp_app.posedetector.YogaProgramBeginner;
 import com.google.android.gms.tasks.Task;
 import com.google.android.odml.image.MlImage;
 import com.google.mlkit.vision.common.InputImage;
-import com.google.mlkit.vision.demo.GraphicOverlay;
-import com.google.mlkit.vision.demo.java.VisionProcessorBase;
-import com.google.mlkit.vision.demo.java.posedetector.classification.PoseClassifierProcessor;
+import com.example.fyp_app.GraphicOverlay;
+import com.example.fyp_app.VisionProcessorBase;
+import com.example.fyp_app.posedetector.classification.PoseClassifierProcessor;
 import com.google.mlkit.vision.pose.Pose;
 import com.google.mlkit.vision.pose.PoseDetection;
 import com.google.mlkit.vision.pose.PoseDetector;
@@ -147,7 +147,7 @@ public class PoseDetectorProcessor
       @NonNull PoseWithClassification poseWithClassification,
       @NonNull GraphicOverlay graphicOverlay) {
     graphicOverlay.add(
-        new com.google.mlkit.vision.demo.java.posedetector.PoseGraphic(
+        new com.example.fyp_app.posedetector.PoseGraphic(
             graphicOverlay,
             poseWithClassification.pose,
             showInFrameLikelihood,

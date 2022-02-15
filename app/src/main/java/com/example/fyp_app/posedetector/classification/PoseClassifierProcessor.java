@@ -54,7 +54,7 @@ public class PoseClassifierProcessor {
   private final boolean isStreamMode;
 
   private EMASmoothing emaSmoothing;
-  private List<com.google.mlkit.vision.demo.java.posedetector.classification.RepetitionCounter> repCounters;
+  private List<com.example.fyp_app.posedetector.classification.RepetitionCounter> repCounters;
   private PoseClassifier poseClassifier;
   private String lastRepResult;
 
@@ -71,14 +71,14 @@ public class PoseClassifierProcessor {
   }
 
   private void loadPoseSamples(Context context) {
-    List<com.google.mlkit.vision.demo.java.posedetector.classification.PoseSample> poseSamples = new ArrayList<>();
+    List<com.example.fyp_app.posedetector.classification.PoseSample> poseSamples = new ArrayList<>();
     try {
       BufferedReader reader = new BufferedReader(
           new InputStreamReader(context.getAssets().open(POSE_SAMPLES_FILE)));
       String csvLine = reader.readLine();
       while (csvLine != null) {
         // If line is not a valid {@link PoseSample}, we'll get null and skip adding to the list.
-        com.google.mlkit.vision.demo.java.posedetector.classification.PoseSample poseSample = com.google.mlkit.vision.demo.java.posedetector.classification.PoseSample.getPoseSample(csvLine, ",");
+        com.example.fyp_app.posedetector.classification.PoseSample poseSample = com.example.fyp_app.posedetector.classification.PoseSample.getPoseSample(csvLine, ",");
         if (poseSample != null) {
           poseSamples.add(poseSample);
         }
@@ -90,7 +90,7 @@ public class PoseClassifierProcessor {
     poseClassifier = new PoseClassifier(poseSamples);
     if (isStreamMode) {
       for (String className : POSE_CLASSES) {
-        repCounters.add(new com.google.mlkit.vision.demo.java.posedetector.classification.RepetitionCounter(className));
+        repCounters.add(new com.example.fyp_app.posedetector.classification.RepetitionCounter(className));
       }
     }
   }
@@ -120,7 +120,7 @@ public class PoseClassifierProcessor {
         return result;
       }
 
-      for (com.google.mlkit.vision.demo.java.posedetector.classification.RepetitionCounter repCounter : repCounters) {
+      for (com.example.fyp_app.posedetector.classification.RepetitionCounter repCounter : repCounters) {
         int repsBefore = repCounter.getNumRepeats();
         int repsAfter = repCounter.addClassificationResult(classification);
         if (repsAfter > repsBefore) {

@@ -1,5 +1,5 @@
 
-package com.google.mlkit.vision.demo.java.posedetector;
+package com.example.fyp_app.posedetector;
 
 import static androidx.camera.core.CameraX.getContext;
 import static java.lang.Math.atan2;
@@ -28,10 +28,10 @@ import com.example.fyp_app.posedetector.YogaProgramBeginner;
 import com.google.android.gms.common.api.Api;
 import com.google.common.primitives.Ints;
 import com.google.mlkit.vision.common.PointF3D;
-import com.google.mlkit.vision.demo.EntryChoiceActivity;
-import com.google.mlkit.vision.demo.GraphicOverlay;
-import com.google.mlkit.vision.demo.GraphicOverlay.Graphic;
-import com.google.mlkit.vision.demo.YogaCompletedActivity;
+import com.example.fyp_app.EntryChoiceActivity;
+import com.example.fyp_app.GraphicOverlay;
+import com.example.fyp_app.GraphicOverlay.Graphic;
+import com.example.fyp_app.YogaCompletedActivity;
 import com.google.mlkit.vision.pose.Pose;
 import com.google.mlkit.vision.pose.PoseLandmark;
 

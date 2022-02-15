@@ -9,6 +9,7 @@
         <entry key="..\:/Users/Iris/Downloads/fyp_app/app/src/main/res/drawable/btn_circle.xml" value="0.1" />
         <entry key="..\:/Users/Iris/Downloads/fyp_app/app/src/main/res/drawable/tick.xml" value="0.1" />
         <entry key="..\:/Users/Iris/Downloads/fyp_app/app/src/main/res/layout/activity_breath.xml" value="0.1" />
+        <entry key="..\:/Users/Iris/Downloads/fyp_app/app/src/main/res/layout/activity_food.xml" value="0.1796875" />
         <entry key="..\:/Users/Iris/Downloads/fyp_app/app/src/main/res/layout/activity_profile.xml" value="0.1" />
         <entry key="..\:/Users/Iris/Downloads/fyp_app/app/src/main/res/layout/activity_scanfood.xml" value="0.1796875" />
         <entry key="..\:/Users/Iris/Downloads/fyp_app/app/src/main/res/layout/activity_yoga_completed.xml" value="0.1" />
@@ -20,6 +21,7 @@
         <entry key="..\:/Users/Iris/Downloads/fyp_app/app/src/main/res/layout/recyclerview_snap.xml" value="0.1" />
         <entry key="..\:/Users/Iris/Downloads/fyp_app/app/src/main/res/layout/snap_details.xml" value="0.1" />
         <entry key="..\:/Users/Iris/Downloads/fyp_app/app/src/main/res/menu/camera_button_menu.xml" value="0.1" />
+        <entry key="..\:/Users/Iris/Downloads/fyp_app/app/src/main/res/xml/preference_live_preview_quickstart.xml" value="0.1796875" />
       </map>
     </option>
   </component>

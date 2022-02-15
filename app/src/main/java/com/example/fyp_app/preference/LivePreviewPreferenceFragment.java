@@ -22,9 +22,9 @@ import android.preference.ListPreference;
 import android.preference.PreferenceCategory;
 import android.preference.PreferenceFragment;
 import androidx.annotation.StringRes;
-import com.google.mlkit.vision.demo.CameraSource;
-import com.google.mlkit.vision.demo.CameraSource.SizePair;
-import com.google.mlkit.vision.demo.R;
+import com.example.fyp_app.CameraSource;
+import com.example.fyp_app.CameraSource.SizePair;
+import com.example.fyp_app.R;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -90,7 +90,7 @@ public class LivePreviewPreferenceFragment extends PreferenceFragment {
         String previewSizeString = sizePair.preview.toString();
         previewSizePreference.setValue(previewSizeString);
         previewSizePreference.setSummary(previewSizeString);
-        com.google.mlkit.vision.demo.preference.PreferenceUtils.saveString(
+        com.example.fyp_app.preference.PreferenceUtils.saveString(
             getActivity(),
             pictureSizePrefKeyId,
             sizePair.picture != null ? sizePair.picture.toString() : null);
@@ -102,7 +102,7 @@ public class LivePreviewPreferenceFragment extends PreferenceFragment {
           (preference, newValue) -> {
             String newPreviewSizeStringValue = (String) newValue;
             previewSizePreference.setSummary(newPreviewSizeStringValue);
-            com.google.mlkit.vision.demo.preference.PreferenceUtils.saveString(
+            com.example.fyp_app.preference.PreferenceUtils.saveString(
                 getActivity(),
                 pictureSizePrefKeyId,
                 previewToPictureSizeStringMap.get(newPreviewSizeStringValue));

@@ -6,8 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="30dp"
-    android:id="@+id/text_dashboard"
-    tools:context=".ui.dashboard.DashboardFragment">
+    tools:context=".openfoodfact">
 
     <TextView
         android:id="@+id/header1"
@@ -47,16 +46,16 @@
             android:layout_marginBottom="30dp"
             app:cardCornerRadius="30dp">
 
-        <SearchView
-            android:id="@+id/searchbar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <!-- 為SearchView定義自動補齊的ListView-->
-        <ListView
-            android:id="@+id/searchbar_list"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"/>
+            <SearchView
+                android:id="@+id/searchbar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <!-- 為SearchView定義自動補齊的ListView-->
+            <ListView
+                android:id="@+id/searchbar_list"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
         </androidx.cardview.widget.CardView>
     </LinearLayout>
 
@@ -76,69 +75,69 @@
         android:fillViewport="true"
         android:layout_below="@id/text3">
 
-    <LinearLayout
-        android:id="@+id/field1"
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:layout_below="@+id/text3"
-        android:layout_marginTop="10dp">
+        <LinearLayout
+            android:id="@+id/field1"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_below="@+id/text3"
+            android:layout_marginTop="10dp">
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/vitaminC"
-            android:layout_width="150dp"
-            android:layout_height="30dp"
-            app:cardElevation="10dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginLeft="5dp"
-            app:cardCornerRadius="30dp">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Vitamin C"
-                android:textStyle="bold"
-                android:textAlignment="center"
+            <androidx.cardview.widget.CardView
+                android:id="@+id/vitaminC"
+                android:layout_width="150dp"
+                android:layout_height="30dp"
+                app:cardElevation="10dp"
                 android:layout_marginTop="5dp"
-                android:textSize="15dp"/>
-        </androidx.cardview.widget.CardView>
+                android:layout_marginLeft="5dp"
+                app:cardCornerRadius="30dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Vitamin C"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:layout_marginTop="5dp"
+                    android:textSize="15dp"/>
+            </androidx.cardview.widget.CardView>
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/protein"
-            android:layout_width="150dp"
-            android:layout_height="30dp"
-            app:cardElevation="10dp"
-            android:layout_marginTop="5dp"
-            app:cardBackgroundColor="@color/white"
-            android:layout_marginLeft="30dp"
-            app:cardCornerRadius="30dp">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Protein"
-                android:textStyle="bold"
-                android:textAlignment="center"
+            <androidx.cardview.widget.CardView
+                android:id="@+id/protein"
+                android:layout_width="150dp"
+                android:layout_height="30dp"
+                app:cardElevation="10dp"
                 android:layout_marginTop="5dp"
-                android:textSize="15dp"/>
-        </androidx.cardview.widget.CardView>
+                app:cardBackgroundColor="@color/white"
+                android:layout_marginLeft="30dp"
+                app:cardCornerRadius="30dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Protein"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:layout_marginTop="5dp"
+                    android:textSize="15dp"/>
+            </androidx.cardview.widget.CardView>
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/calcium"
-            android:layout_width="150dp"
-            android:layout_height="30dp"
-            app:cardElevation="10dp"
-            android:layout_marginTop="5dp"
-            app:cardBackgroundColor="@color/white"
-            android:layout_marginLeft="30dp"
-            app:cardCornerRadius="30dp">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Calcium"
-                android:textStyle="bold"
-                android:textAlignment="center"
+            <androidx.cardview.widget.CardView
+                android:id="@+id/calcium"
+                android:layout_width="150dp"
+                android:layout_height="30dp"
+                app:cardElevation="10dp"
                 android:layout_marginTop="5dp"
-                android:textSize="15dp"/>
-        </androidx.cardview.widget.CardView>
-    </LinearLayout>
+                app:cardBackgroundColor="@color/white"
+                android:layout_marginLeft="30dp"
+                app:cardCornerRadius="30dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Calcium"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:layout_marginTop="5dp"
+                    android:textSize="15dp"/>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
     </HorizontalScrollView>
 
     <TextView
@@ -249,6 +248,7 @@
 
     <Button
         android:id="@+id/btn_login"
+        android:onClick="ScanButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"

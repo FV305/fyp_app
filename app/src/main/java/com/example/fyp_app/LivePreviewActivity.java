@@ -42,14 +42,10 @@ import androidx.core.app.ActivityCompat.OnRequestPermissionsResultCallback;
 import androidx.core.content.ContextCompat;
 import androidx.core.view.WindowCompat;
 
+import com.example.fyp_app.posedetector.PoseDetectorProcessor;
+import com.example.fyp_app.posedetector.YogaProgramBeginner;
+import com.example.fyp_app.preference.PreferenceUtils;
 import com.google.android.gms.common.annotation.KeepName;
-import com.google.mlkit.vision.demo.CameraSource;
-import com.google.mlkit.vision.demo.CameraSourcePreview;
-import com.google.mlkit.vision.demo.GraphicOverlay;
-import com.google.mlkit.vision.demo.R;
-import com.google.mlkit.vision.demo.java.posedetector.PoseDetectorProcessor;
-import com.google.mlkit.vision.demo.java.posedetector.YogaProgramBeginner;
-import com.google.mlkit.vision.demo.preference.PreferenceUtils;
 import com.google.mlkit.vision.pose.PoseDetectorOptionsBase;
 
 import java.io.IOException;

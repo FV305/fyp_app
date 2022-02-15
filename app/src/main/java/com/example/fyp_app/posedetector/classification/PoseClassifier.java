@@ -16,12 +16,12 @@
 
 package com.example.fyp_app.posedetector.classification;
 
-import static com.google.mlkit.vision.demo.java.posedetector.classification.PoseEmbedding.getPoseEmbedding;
-import static com.google.mlkit.vision.demo.java.posedetector.classification.Utils.maxAbs;
-import static com.google.mlkit.vision.demo.java.posedetector.classification.Utils.multiply;
-import static com.google.mlkit.vision.demo.java.posedetector.classification.Utils.multiplyAll;
-import static com.google.mlkit.vision.demo.java.posedetector.classification.Utils.subtract;
-import static com.google.mlkit.vision.demo.java.posedetector.classification.Utils.sumAbs;
+import static com.example.fyp_app.posedetector.classification.PoseEmbedding.getPoseEmbedding;
+import static com.example.fyp_app.posedetector.classification.Utils.maxAbs;
+import static com.example.fyp_app.posedetector.classification.Utils.multiply;
+import static com.example.fyp_app.posedetector.classification.Utils.multiplyAll;
+import static com.example.fyp_app.posedetector.classification.Utils.subtract;
+import static com.example.fyp_app.posedetector.classification.Utils.sumAbs;
 import static java.lang.Math.max;
 import static java.lang.Math.min;
 
@@ -48,16 +48,16 @@ public class PoseClassifier {
   // Note Z has a lower weight as it is generally less accurate than X & Y.
   private static final PointF3D AXES_WEIGHTS = PointF3D.from(1, 1, 0.2f);
 
-  private final List<com.google.mlkit.vision.demo.java.posedetector.classification.PoseSample> poseSamples;
+  private final List<com.example.fyp_app.posedetector.classification.PoseSample> poseSamples;
   private final int maxDistanceTopK;
   private final int meanDistanceTopK;
   private final PointF3D axesWeights;
 
-  public PoseClassifier(List<com.google.mlkit.vision.demo.java.posedetector.classification.PoseSample> poseSamples) {
+  public PoseClassifier(List<com.example.fyp_app.posedetector.classification.PoseSample> poseSamples) {
     this(poseSamples, MAX_DISTANCE_TOP_K, MEAN_DISTANCE_TOP_K, AXES_WEIGHTS);
   }
 
-  public PoseClassifier(List<com.google.mlkit.vision.demo.java.posedetector.classification.PoseSample> poseSamples, int maxDistanceTopK,
+  public PoseClassifier(List<com.example.fyp_app.posedetector.classification.PoseSample> poseSamples, int maxDistanceTopK,
                         int meanDistanceTopK, PointF3D axesWeights) {
     this.poseSamples = poseSamples;
     this.maxDistanceTopK = maxDistanceTopK;
@@ -110,10 +110,10 @@ public class PoseClassifier {
     //    that are closest by average.
 
     // Keeps max distance on top so we can pop it when top_k size is reached.
-    PriorityQueue<Pair<com.google.mlkit.vision.demo.java.posedetector.classification.PoseSample, Float>> maxDistances = new PriorityQueue<>(
+    PriorityQueue<Pair<com.example.fyp_app.posedetector.classification.PoseSample, Float>> maxDistances = new PriorityQueue<>(
         maxDistanceTopK, (o1, o2) -> -Float.compare(o1.second, o2.second));
     // Retrieve top K poseSamples by least distance to remove outliers.
-    for (com.google.mlkit.vision.demo.java.posedetector.classification.PoseSample poseSample : poseSamples) {
+    for (com.example.fyp_app.posedetector.classification.PoseSample poseSample : poseSamples) {
       List<PointF3D> sampleEmbedding = poseSample.getEmbedding();
 
       float originalMax = 0;
@@ -139,11 +139,11 @@ public class PoseClassifier {
     }
 
     // Keeps higher mean distances on top so we can pop it when top_k size is reached.
-    PriorityQueue<Pair<com.google.mlkit.vision.demo.java.posedetector.classification.PoseSample, Float>> meanDistances = new PriorityQueue<>(
+    PriorityQueue<Pair<com.example.fyp_app.posedetector.classification.PoseSample, Float>> meanDistances = new PriorityQueue<>(
         meanDistanceTopK, (o1, o2) -> -Float.compare(o1.second, o2.second));
     // Retrive top K poseSamples by least mean distance to remove outliers.
-    for (Pair<com.google.mlkit.vision.demo.java.posedetector.classification.PoseSample, Float> sampleDistances : maxDistances) {
-      com.google.mlkit.vision.demo.java.posedetector.classification.PoseSample poseSample = sampleDistances.first;
+    for (Pair<com.example.fyp_app.posedetector.classification.PoseSample, Float> sampleDistances : maxDistances) {
+      com.example.fyp_app.posedetector.classification.PoseSample poseSample = sampleDistances.first;
       List<PointF3D> sampleEmbedding = poseSample.getEmbedding();
 
       float originalSum = 0;
@@ -163,7 +163,7 @@ public class PoseClassifier {
       }
     }
 
-    for (Pair<com.google.mlkit.vision.demo.java.posedetector.classification.PoseSample, Float> sampleDistances : meanDistances) {
+    for (Pair<com.example.fyp_app.posedetector.classification.PoseSample, Float> sampleDistances : meanDistances) {
       String className = sampleDistances.first.getClassName();
       result.incrementClassConfidence(className);
     }

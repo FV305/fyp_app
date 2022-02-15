@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.google.mlkit.vision.demo"
+    package="com.example.fyp_app"
     android:installLocation="auto">
     <uses-sdk android:minSdkVersion="24" tools:overrideLibrary="           androidx.camera.camera2, androidx.camera.core,           androidx.camera.view, androidx.camera.lifecycle" />
 
@@ -37,6 +37,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
         <activity android:name=".YogaCompletedActivity"
             android:screenOrientation="landscape"></activity>
         <activity android:name=".YogaActivity" />
@@ -68,11 +70,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".java.LivePreviewActivity"
+            android:name=".LivePreviewActivity"
             android:exported="true"
             android:screenOrientation="landscape"
             android:theme="@style/AppTheme" />
     </application>
-
 
 </manifest>
