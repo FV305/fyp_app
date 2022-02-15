@@ -61,8 +61,7 @@
         <activity
             android:name=".EntryChoiceActivity"
             android:configChanges="orientation|screenSize"
-            android:exported="true"
-            android:theme="@style/AppTheme">
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -72,8 +71,7 @@
         <activity
             android:name=".LivePreviewActivity"
             android:exported="true"
-            android:screenOrientation="landscape"
-            android:theme="@style/AppTheme" />
+            android:screenOrientation="landscape" />
     </application>
 
 </manifest>

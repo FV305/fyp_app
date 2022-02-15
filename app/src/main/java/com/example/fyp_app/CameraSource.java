@@ -33,7 +33,6 @@ import androidx.annotation.RequiresPermission;
 
 import com.example.fyp_app.preference.PreferenceUtils;
 import com.google.android.gms.common.images.Size;
-import com.example.fyp_app.preference.PreferenceUtils;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
